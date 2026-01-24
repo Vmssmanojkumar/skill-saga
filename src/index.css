@@ -172,9 +172,9 @@
   }
 
   .game-card:hover {
-    @apply border-primary;
+    @apply border-border;
     transform: translateY(-4px);
-    box-shadow: var(--glow-orange);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
   }
 
   /* Path connector for journey map */

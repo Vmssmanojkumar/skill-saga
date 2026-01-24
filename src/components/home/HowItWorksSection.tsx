@@ -55,11 +55,11 @@ const HowItWorksSection = () => {
             <div key={index} className="relative">
               {/* Connector line */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-primary/50 to-transparent z-0" />
+                <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-border to-transparent z-0" />
               )}
               
               <div className="game-card p-6 text-center relative z-10">
-                <div className="text-xs text-primary font-bold mb-2">{step.number}</div>
+                <div className="text-xs text-muted-foreground font-bold mb-2">{step.number}</div>
                 <div className="text-4xl mb-4">{step.emoji}</div>
                 <h3 className="text-lg font-display font-bold text-foreground mb-2">
                   {step.title}

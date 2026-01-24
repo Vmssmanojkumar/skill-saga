@@ -14,11 +14,11 @@ const FounderSection = () => {
 
   return (
     <section className="py-20 px-4 relative overflow-hidden bg-background">
-      {/* Soft orange glow background */}
+      {/* Soft subtle glow background */}
       <div 
-        className="absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full opacity-15 blur-3xl pointer-events-none -translate-y-1/2"
+        className="absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full opacity-10 blur-3xl pointer-events-none -translate-y-1/2"
         style={{
-          background: "radial-gradient(circle, hsl(25 95% 53%) 0%, transparent 70%)",
+          background: "radial-gradient(circle, hsl(0 0% 30%) 0%, transparent 70%)",
         }}
       />
       
@@ -92,9 +92,9 @@ const FounderSection = () => {
               className="absolute inset-0 flex items-center justify-center pointer-events-none"
             >
               <div 
-                className="w-80 h-80 rounded-full opacity-30 blur-2xl"
+                className="w-80 h-80 rounded-full opacity-20 blur-2xl"
                 style={{
-                  background: "radial-gradient(circle, hsl(25 95% 53%) 0%, transparent 70%)",
+                  background: "radial-gradient(circle, hsl(0 0% 25%) 0%, transparent 70%)",
                 }}
               />
             </div>
@@ -106,9 +106,9 @@ const FounderSection = () => {
                 {/* Stylized founder silhouette */}
                 <div className="relative w-full h-full flex items-end justify-center">
                   {/* Body silhouette */}
-                  <div className="absolute bottom-0 w-40 h-60 bg-gradient-to-t from-primary/20 to-transparent rounded-t-full" />
+                  <div className="absolute bottom-0 w-40 h-60 bg-gradient-to-t from-muted/30 to-transparent rounded-t-full" />
                   {/* Head */}
-                  <div className="absolute bottom-48 w-20 h-20 bg-primary/30 rounded-full" />
+                  <div className="absolute bottom-48 w-20 h-20 bg-muted/40 rounded-full" />
                   {/* Decorative elements */}
                   <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-center">
                     <span className="text-4xl">👨‍💻</span>
@@ -121,13 +121,13 @@ const FounderSection = () => {
               {floatingBadges.map((badge, index) => (
                 <div
                   key={index}
-                  className={`absolute ${badge.position} px-3 py-1.5 bg-card/90 backdrop-blur-sm border border-primary/30 rounded-full text-xs font-medium text-foreground shadow-lg animate-float`}
+                  className={`absolute ${badge.position} px-3 py-1.5 bg-card/90 backdrop-blur-sm border border-border rounded-full text-xs font-medium text-foreground shadow-lg animate-float`}
                   style={{
                     animationDelay: badge.delay,
                     animationDuration: "3s",
                   }}
                 >
-                  <span className="text-primary mr-1">✦</span>
+                  <span className="text-muted-foreground mr-1">✦</span>
                   {badge.text}
                 </div>
               ))}

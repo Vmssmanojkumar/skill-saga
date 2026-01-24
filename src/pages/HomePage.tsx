@@ -19,11 +19,11 @@ export function HomePage() {
       
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 relative overflow-hidden">
-        {/* Background glow */}
+        {/* Background glow - subtle */}
         <div 
-          className="absolute top-20 right-0 w-96 h-96 rounded-full opacity-20 blur-3xl pointer-events-none"
+          className="absolute top-20 right-0 w-96 h-96 rounded-full opacity-10 blur-3xl pointer-events-none"
           style={{
-            background: "radial-gradient(circle, hsl(25 95% 53%) 0%, transparent 70%)",
+            background: "radial-gradient(circle, hsl(0 0% 30%) 0%, transparent 70%)",
           }}
         />
 
@@ -61,7 +61,7 @@ export function HomePage() {
                   { value: "Telugu", label: "& English" },
                 ].map((stat, i) => (
                   <div key={i} className="text-center">
-                    <div className="text-2xl md:text-3xl font-display font-bold text-primary">
+                    <div className="text-2xl md:text-3xl font-display font-bold text-foreground">
                       {stat.value}
                     </div>
                     <div className="text-sm text-muted-foreground">{stat.label}</div>
