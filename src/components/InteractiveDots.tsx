@@ -19,8 +19,7 @@ const InteractiveDots = ({
   const dotsRef = useRef<Array<{ x: number; y: number; originalX: number; originalY: number; phase: number }>>([]);
   const dprRef = useRef<number>(1);
 
-  // Using theme colors: dark background, orange dots
-  const backgroundColor = 'hsl(0, 0%, 4%)'; // --background
+  // Using theme colors: transparent background, orange dots
   const dotColor = { r: 249, g: 115, b: 22 }; // orange-500 (primary)
 
   const getMouseInfluence = (x: number, y: number): number => {
@@ -133,8 +132,8 @@ const InteractiveDots = ({
     const canvasWidth = canvas.clientWidth;
     const canvasHeight = canvas.clientHeight;
 
-    ctx.fillStyle = backgroundColor;
-    ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+    // Clear canvas with transparency
+    ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
     dotsRef.current.forEach((dot) => {
       const mouseInfluence = getMouseInfluence(dot.originalX, dot.originalY);
@@ -201,8 +200,8 @@ const InteractiveDots = ({
   }, [animate, resizeCanvas, handleMouseMove, handleMouseDown, handleMouseUp]);
 
   return (
-    <div className="fixed inset-0 w-full h-full overflow-hidden -z-10">
-      <canvas ref={canvasRef} className="block w-full h-full" />
+    <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none" style={{ zIndex: 0 }}>
+      <canvas ref={canvasRef} className="block w-full h-full pointer-events-auto" />
     </div>
   );
 };
