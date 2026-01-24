@@ -10,7 +10,6 @@ const courses = [
     lessons: 45,
     students: "2.5k+",
     price: "₹199",
-    color: "from-yellow-500/20 to-green-500/20",
     description: "Start your coding journey with the most beginner-friendly language",
   },
   {
@@ -21,7 +20,6 @@ const courses = [
     lessons: 32,
     students: "1.8k+",
     price: "₹149",
-    color: "from-blue-500/20 to-cyan-500/20",
     description: "Master database management and SQL queries",
   },
   {
@@ -32,7 +30,6 @@ const courses = [
     lessons: 38,
     students: "3.2k+",
     price: "₹99",
-    color: "from-pink-500/20 to-purple-500/20",
     description: "Create beautiful websites with HTML, CSS & JavaScript",
   },
   {
@@ -43,7 +40,6 @@ const courses = [
     lessons: 52,
     students: "1.2k+",
     price: "₹299",
-    color: "from-green-500/20 to-emerald-500/20",
     description: "Build powerful web applications with Python's best framework",
   },
 ];
@@ -72,7 +68,7 @@ const CoursePreviewSection = () => {
               className="game-card group cursor-pointer hover:scale-105 transition-transform duration-300"
               onClick={() => navigate("/login")}
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${course.color} opacity-50 rounded-2xl`} />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 opacity-50 rounded-2xl" />
               <div className="relative p-6">
                 <div className="text-5xl mb-4">{course.emoji}</div>
                 <h3 className="text-xl font-display font-bold text-foreground mb-2">
