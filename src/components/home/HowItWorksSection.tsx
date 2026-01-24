@@ -37,7 +37,7 @@ const comparisons = [
 
 const HowItWorksSection = () => {
   return (
-    <section className="py-20 px-4 bg-background">
+    <section className="py-20 px-4 bg-secondary/30">
       <div className="container mx-auto max-w-6xl">
         {/* How It Works */}
         <div className="text-center mb-16">
