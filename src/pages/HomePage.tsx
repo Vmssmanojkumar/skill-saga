@@ -19,13 +19,6 @@ export function HomePage() {
       
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 relative overflow-hidden">
-        {/* Background glow */}
-        <div 
-          className="absolute top-20 right-0 w-96 h-96 rounded-full opacity-20 blur-3xl pointer-events-none"
-          style={{
-            background: "radial-gradient(circle, hsl(25 95% 53%) 0%, transparent 70%)",
-          }}
-        />
 
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col lg:flex-row items-center gap-12">

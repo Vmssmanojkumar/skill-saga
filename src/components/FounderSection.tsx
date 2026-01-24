@@ -14,13 +14,6 @@ const FounderSection = () => {
 
   return (
     <section className="py-20 px-4 relative overflow-hidden bg-background">
-      {/* Soft orange glow background */}
-      <div 
-        className="absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full opacity-15 blur-3xl pointer-events-none -translate-y-1/2"
-        style={{
-          background: "radial-gradient(circle, hsl(25 95% 53%) 0%, transparent 70%)",
-        }}
-      />
       
       {/* Animated grain overlay */}
       <div 
@@ -87,17 +80,6 @@ const FounderSection = () => {
 
           {/* Right Side - Founder Visual */}
           <div className="relative flex justify-center lg:justify-end">
-            {/* Glow behind founder */}
-            <div 
-              className="absolute inset-0 flex items-center justify-center pointer-events-none"
-            >
-              <div 
-                className="w-80 h-80 rounded-full opacity-30 blur-2xl"
-                style={{
-                  background: "radial-gradient(circle, hsl(25 95% 53%) 0%, transparent 70%)",
-                }}
-              />
-            </div>
 
             {/* Founder illustration placeholder */}
             <div className="relative">
