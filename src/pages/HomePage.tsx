@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import Babai from "@/components/Babai";
 import GameButton from "@/components/GameButton";
+import InteractiveDots from "@/components/InteractiveDots";
 import { useNavigate } from "react-router-dom";
 
 const founderStory = [
@@ -27,8 +28,13 @@ export function HomePage() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
+    <div className="min-h-screen bg-background relative">
+      {/* Interactive Background */}
+      <InteractiveDots />
+      
+      {/* Content Layer */}
+      <div className="relative z-10">
+        <Header />
       
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 relative overflow-hidden">
@@ -160,9 +166,10 @@ export function HomePage() {
       <footer className="py-8 px-4 border-t border-border bg-card/50">
         <div className="container mx-auto text-center text-muted-foreground text-sm">
           <p>Built with ❤️ for Indian students who dream big</p>
-          <p className="mt-2">© 2024 SkillQuest. All rights reserved.</p>
+        <p className="mt-2">© 2024 SkillQuest. All rights reserved.</p>
         </div>
       </footer>
+      </div>
     </div>
   );
 }
