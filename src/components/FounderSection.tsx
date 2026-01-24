@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Babai from "./Babai";
 import GameButton from "./GameButton";
+import ElectricBorder from "./ElectricBorder";
 
 const floatingBadges = [
   { text: "Founder & CEO", position: "top-4 right-8", delay: "0s" },
@@ -83,21 +84,28 @@ const FounderSection = () => {
 
             {/* Founder illustration placeholder */}
             <div className="relative">
-              {/* Founder silhouette/avatar area */}
-              <div className="w-64 h-80 md:w-72 md:h-96 rounded-3xl bg-gradient-to-b from-card to-background border border-border/50 flex items-center justify-center overflow-hidden">
-                {/* Stylized founder silhouette */}
-                <div className="relative w-full h-full flex items-end justify-center">
-                  {/* Body silhouette */}
-                  <div className="absolute bottom-0 w-40 h-60 bg-gradient-to-t from-primary/20 to-transparent rounded-t-full" />
-                  {/* Head */}
-                  <div className="absolute bottom-48 w-20 h-20 bg-primary/30 rounded-full" />
-                  {/* Decorative elements */}
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-center">
-                    <span className="text-4xl">👨‍💻</span>
-                    <p className="text-xs text-muted-foreground mt-2">Your Mentor</p>
+              <ElectricBorder 
+                color="#f97316" 
+                speed={0.8} 
+                chaos={0.08} 
+                borderRadius={24}
+              >
+                {/* Founder silhouette/avatar area */}
+                <div className="w-64 h-80 md:w-72 md:h-96 rounded-3xl bg-gradient-to-b from-card to-background flex items-center justify-center overflow-hidden">
+                  {/* Stylized founder silhouette */}
+                  <div className="relative w-full h-full flex items-end justify-center">
+                    {/* Body silhouette */}
+                    <div className="absolute bottom-0 w-40 h-60 bg-gradient-to-t from-primary/20 to-transparent rounded-t-full" />
+                    {/* Head */}
+                    <div className="absolute bottom-48 w-20 h-20 bg-primary/30 rounded-full" />
+                    {/* Decorative elements */}
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-center">
+                      <span className="text-4xl">👨‍💻</span>
+                      <p className="text-xs text-muted-foreground mt-2">Your Mentor</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ElectricBorder>
 
               {/* Floating Achievement Badges */}
               {floatingBadges.map((badge, index) => (
