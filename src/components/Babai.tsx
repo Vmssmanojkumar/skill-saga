@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
-export type BabaiExpression = "happy" | "thinking" | "proud" | "warning" | "excited" | "waving";
+export type BabaiExpression = "happy" | "thinking" | "proud" | "warning" | "excited" | "waving" | "looking-up";
 
 interface BabaiProps {
   expression?: BabaiExpression;
@@ -12,13 +12,14 @@ interface BabaiProps {
   animate?: boolean;
 }
 
-const expressionEmojis: Record<BabaiExpression, { eyes: string; mouth: string; extra?: string }> = {
+const expressionEmojis: Record<BabaiExpression, { eyes: string; mouth: string; extra?: string; lookUp?: boolean }> = {
   happy: { eyes: "◡", mouth: "◡", extra: "" },
   thinking: { eyes: "◔", mouth: "∼", extra: "🤔" },
   proud: { eyes: "◠", mouth: "▽", extra: "⭐" },
   warning: { eyes: "◉", mouth: "△", extra: "⚠️" },
   excited: { eyes: "★", mouth: "▽", extra: "✨" },
   waving: { eyes: "◡", mouth: "◡", extra: "👋" },
+  "looking-up": { eyes: "◠", mouth: "◡", extra: "💭", lookUp: true },
 };
 
 const sizeClasses = {
@@ -63,14 +64,19 @@ export function Babai({
         )}
       >
         {/* Extra expression indicator */}
-        {expr.extra && (
+        {expr.extra && !expr.lookUp && (
           <span className="absolute -top-2 -right-2 text-2xl animate-bounce-gentle">
             {expr.extra}
           </span>
         )}
 
         {/* Head */}
-        <div className="relative">
+        <div 
+          className="relative transition-transform duration-300"
+          style={{
+            transform: expr.lookUp ? "rotate(-10deg) translateY(-5px)" : "none",
+          }}
+        >
           {/* Lungi/Dhoti style headwrap */}
           <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-[90%] h-3 bg-primary rounded-t-full" />
           
@@ -83,15 +89,26 @@ export function Babai({
               background: "linear-gradient(145deg, hsl(30 60% 75%), hsl(30 50% 60%))",
             }}
           >
-            {/* Eyes */}
-            <div className="flex gap-2 md:gap-3 mb-1">
-              <span className="text-sm md:text-lg font-bold text-foreground">{expr.eyes}</span>
-              <span className="text-sm md:text-lg font-bold text-foreground">{expr.eyes}</span>
+            {/* Eyes - looking up when lookUp is true */}
+            <div 
+              className="flex gap-2 md:gap-3 mb-1 transition-transform duration-300"
+              style={{
+                transform: expr.lookUp ? "translateY(-3px)" : "none",
+              }}
+            >
+              <span className="text-sm md:text-lg font-bold text-foreground">
+                {expr.lookUp ? "◠" : expr.eyes}
+              </span>
+              <span className="text-sm md:text-lg font-bold text-foreground">
+                {expr.lookUp ? "◠" : expr.eyes}
+              </span>
             </div>
             {/* Mustache */}
             <div className="text-xs md:text-sm text-foreground opacity-70">〰️</div>
-            {/* Mouth */}
-            <span className="text-sm md:text-lg font-bold text-foreground">{expr.mouth}</span>
+            {/* Mouth - gentle smile when looking up */}
+            <span className="text-sm md:text-lg font-bold text-foreground">
+              {expr.lookUp ? "◡" : expr.mouth}
+            </span>
           </div>
         </div>
 
@@ -120,6 +137,20 @@ export function Babai({
               background: "hsl(30 60% 70%)",
               borderRadius: "4px",
               transform: "rotate(-45deg)",
+            }}
+          />
+        )}
+
+        {/* Raised hand when looking up (thinking pose) */}
+        {currentExpression === "looking-up" && (
+          <div 
+            className="absolute -right-3 top-1/3 animate-pulse"
+            style={{
+              width: "15px",
+              height: "15px",
+              background: "hsl(30 60% 70%)",
+              borderRadius: "50%",
+              boxShadow: "0 0 10px hsl(var(--primary) / 0.3)",
             }}
           />
         )}
