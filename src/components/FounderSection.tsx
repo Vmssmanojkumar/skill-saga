@@ -81,15 +81,14 @@ const FounderSection = () => {
 
           {/* Right Side - Founder Visual */}
           <div className="relative flex justify-center lg:justify-end">
-
-            {/* Founder illustration placeholder */}
-            <div className="relative">
-              <ElectricBorder 
-                color="#f97316" 
-                speed={0.8} 
-                chaos={0.08} 
-                borderRadius={24}
-              >
+            <ElectricBorder 
+              color="#f97316" 
+              speed={0.8} 
+              chaos={0.08} 
+              borderRadius={24}
+            >
+              {/* Founder illustration placeholder */}
+              <div className="relative p-8">
                 {/* Founder silhouette/avatar area */}
                 <div className="w-64 h-80 md:w-72 md:h-96 rounded-3xl bg-gradient-to-b from-card to-background flex items-center justify-center overflow-hidden">
                   {/* Stylized founder silhouette */}
@@ -105,23 +104,23 @@ const FounderSection = () => {
                     </div>
                   </div>
                 </div>
-              </ElectricBorder>
 
-              {/* Floating Achievement Badges */}
-              {floatingBadges.map((badge, index) => (
-                <div
-                  key={index}
-                  className={`absolute ${badge.position} px-3 py-1.5 bg-card/90 backdrop-blur-sm border border-primary/30 rounded-full text-xs font-medium text-foreground shadow-lg animate-float`}
-                  style={{
-                    animationDelay: badge.delay,
-                    animationDuration: "3s",
-                  }}
-                >
-                  <span className="text-primary mr-1">✦</span>
-                  {badge.text}
-                </div>
-              ))}
-            </div>
+                {/* Floating Achievement Badges */}
+                {floatingBadges.map((badge, index) => (
+                  <div
+                    key={index}
+                    className={`absolute ${badge.position} px-3 py-1.5 bg-card/90 backdrop-blur-sm border border-primary/30 rounded-full text-xs font-medium text-foreground shadow-lg animate-float`}
+                    style={{
+                      animationDelay: badge.delay,
+                      animationDuration: "3s",
+                    }}
+                  >
+                    <span className="text-primary mr-1">✦</span>
+                    {badge.text}
+                  </div>
+                ))}
+              </div>
+            </ElectricBorder>
           </div>
         </div>
       </div>
