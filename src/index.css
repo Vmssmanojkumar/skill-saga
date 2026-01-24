@@ -42,6 +42,10 @@
     /* Status Colors */
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
+    
+    /* Warning - Yellow for stars/ratings */
+    --warning: 45 93% 47%;
+    --warning-foreground: 0 0% 0%;
 
     /* Success - Completed levels */
     --success: 142 76% 40%;

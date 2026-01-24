@@ -2,7 +2,14 @@ import Header from "@/components/Header";
 import Babai from "@/components/Babai";
 import GameButton from "@/components/GameButton";
 import FounderSection from "@/components/FounderSection";
+import CoursePreviewSection from "@/components/home/CoursePreviewSection";
+import TestimonialsSection from "@/components/home/TestimonialsSection";
+import HowItWorksSection from "@/components/home/HowItWorksSection";
+import FeaturesSection from "@/components/home/FeaturesSection";
+import FAQSection from "@/components/home/FAQSection";
+import CTASection from "@/components/home/CTASection";
 import { useNavigate } from "react-router-dom";
+
 export function HomePage() {
   const navigate = useNavigate();
 
@@ -78,38 +85,66 @@ export function HomePage() {
       {/* Founder's Journey Section */}
       <FounderSection />
 
-      {/* Babai Quote Section */}
-      <section className="py-20 px-4 relative">
-        <div 
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: "radial-gradient(circle at 2px 2px, hsl(25 95% 53%) 1px, transparent 0)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-        <div className="container mx-auto max-w-3xl text-center relative z-10">
-          <Babai expression="proud" size="lg" showBubble={false} />
-          <blockquote className="mt-8 text-2xl md:text-3xl font-display text-foreground italic">
-            "Nee journey maname start cheddham ra!"
-          </blockquote>
-          <p className="mt-4 text-muted-foreground">
-            — Babai, Your Learning Companion
-          </p>
-          <GameButton 
-            size="lg" 
-            className="mt-8"
-            onClick={() => navigate("/courses")}
-          >
-            Start Learning Now 🎯
-          </GameButton>
-        </div>
-      </section>
+      {/* Course Previews */}
+      <CoursePreviewSection />
+
+      {/* How It Works & Comparison */}
+      <HowItWorksSection />
+
+      {/* Features Grid */}
+      <FeaturesSection />
+
+      {/* Testimonials & Social Proof */}
+      <TestimonialsSection />
+
+      {/* FAQ Section */}
+      <FAQSection />
+
+      {/* Final CTA */}
+      <CTASection />
 
       {/* Footer */}
-      <footer className="py-8 px-4 border-t border-border bg-card/50">
-        <div className="container mx-auto text-center text-muted-foreground text-sm">
-          <p>Built with ❤️ for Indian students who dream big</p>
-        <p className="mt-2">© 2024 SkillQuest. All rights reserved.</p>
+      <footer className="py-12 px-4 border-t border-border bg-card/50">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <h4 className="font-display font-bold text-foreground mb-4">SkillQuest</h4>
+              <p className="text-sm text-muted-foreground">
+                Learn skills like playing a game. Built for Indian students who dream big.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-display font-bold text-foreground mb-4">Courses</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="hover:text-primary cursor-pointer">Python</li>
+                <li className="hover:text-primary cursor-pointer">MySQL</li>
+                <li className="hover:text-primary cursor-pointer">Web Design</li>
+                <li className="hover:text-primary cursor-pointer">Django</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-display font-bold text-foreground mb-4">Company</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="hover:text-primary cursor-pointer">About Us</li>
+                <li className="hover:text-primary cursor-pointer">Careers</li>
+                <li className="hover:text-primary cursor-pointer">Blog</li>
+                <li className="hover:text-primary cursor-pointer">Contact</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-display font-bold text-foreground mb-4">Support</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="hover:text-primary cursor-pointer">Help Center</li>
+                <li className="hover:text-primary cursor-pointer">Community</li>
+                <li className="hover:text-primary cursor-pointer">Privacy Policy</li>
+                <li className="hover:text-primary cursor-pointer">Terms of Service</li>
+              </ul>
+            </div>
+          </div>
+          <div className="pt-8 border-t border-border text-center text-muted-foreground text-sm">
+            <p>Built with ❤️ for Indian students who dream big</p>
+            <p className="mt-2">© 2024 SkillQuest. All rights reserved.</p>
+          </div>
         </div>
       </footer>
     </div>
