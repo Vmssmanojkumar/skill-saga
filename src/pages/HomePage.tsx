@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import Babai from "@/components/Babai";
 import GameButton from "@/components/GameButton";
+import InteractiveDots from "@/components/InteractiveDots";
 import { useNavigate } from "react-router-dom";
 
 const founderStory = [
@@ -27,7 +28,8 @@ export function HomePage() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <InteractiveDots gridSpacing={35} animationSpeed={0.003} />
       <Header />
       
       {/* Hero Section */}
