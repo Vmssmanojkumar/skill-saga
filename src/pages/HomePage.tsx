@@ -8,15 +8,13 @@ import HowItWorksSection from "@/components/home/HowItWorksSection";
 import FeaturesSection from "@/components/home/FeaturesSection";
 import FAQSection from "@/components/home/FAQSection";
 import CTASection from "@/components/home/CTASection";
-import MeshGradientBackground from "@/components/MeshGradientBackground";
 import { useNavigate } from "react-router-dom";
 
 export function HomePage() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-background relative">
-      <MeshGradientBackground />
+    <div className="min-h-screen bg-background">
       <Header />
       
       {/* Hero Section */}
