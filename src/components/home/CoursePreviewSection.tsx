@@ -79,7 +79,7 @@ const CoursePreviewSection = () => {
                 </p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-2 py-1 bg-primary/20 text-primary text-xs rounded-full">
+                  <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-full">
                     {course.difficulty}
                   </span>
                   <span className="px-2 py-1 bg-card text-muted-foreground text-xs rounded-full">
@@ -88,12 +88,12 @@ const CoursePreviewSection = () => {
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-lg font-bold text-primary">{course.price}</span>
+                  <span className="text-lg font-bold text-foreground">{course.price}</span>
                   <span className="text-xs text-muted-foreground">{course.students} students</span>
                 </div>
 
                 <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="w-full py-2 text-center bg-primary/20 text-primary text-sm font-medium rounded-xl">
+                  <div className="w-full py-2 text-center bg-primary text-primary-foreground text-sm font-medium rounded-xl">
                     Start Learning →
                   </div>
                 </div>

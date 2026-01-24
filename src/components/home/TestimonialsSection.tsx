@@ -59,7 +59,7 @@ const TestimonialsSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 p-6 bg-card/50 backdrop-blur-sm rounded-2xl border border-border/50">
           {stats.map((stat, i) => (
             <div key={i} className="text-center">
-              <div className="text-2xl md:text-3xl font-display font-bold text-primary">
+              <div className="text-2xl md:text-3xl font-display font-bold text-foreground">
                 {stat.value}
               </div>
               <div className="text-sm text-muted-foreground">{stat.label}</div>
@@ -92,7 +92,7 @@ const TestimonialsSection = () => {
                     <span className="text-xs text-muted-foreground">• {item.location}</span>
                   </div>
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="px-2 py-0.5 bg-primary/20 text-primary text-xs rounded-full">
+                    <span className="px-2 py-0.5 bg-muted text-muted-foreground text-xs rounded-full">
                       {item.course}
                     </span>
                     <span className="text-warning text-sm">
