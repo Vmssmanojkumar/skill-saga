@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Babai from "@/components/Babai";
-import SpeechBubble from "@/components/SpeechBubble";
+import ThoughtCloud from "@/components/ThoughtCloud";
 import GameButton from "@/components/GameButton";
 
 const welcomeMessages = [
@@ -24,14 +24,14 @@ export function WelcomeScene() {
 
   return (
     <div 
-      className={`min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden transition-opacity duration-500 ${fadeOut ? 'opacity-0' : 'opacity-100'}`}
+      className={`min-h-screen flex items-end justify-start p-6 md:p-12 relative overflow-hidden transition-opacity duration-500 ${fadeOut ? 'opacity-0' : 'opacity-100'}`}
       style={{
         background: "radial-gradient(ellipse at center, hsl(0 0% 10%) 0%, hsl(0 0% 4%) 70%)",
       }}
     >
       {/* Animated background particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(25)].map((_, i) => (
           <div
             key={i}
             className="absolute w-2 h-2 rounded-full bg-primary/20"
@@ -45,50 +45,65 @@ export function WelcomeScene() {
         ))}
       </div>
 
-      {/* Orange glow behind Babai */}
+      {/* Orange glow - positioned at bottom left */}
       <div 
-        className="absolute w-96 h-96 rounded-full opacity-30 blur-3xl"
+        className="absolute bottom-0 left-0 w-[500px] h-[500px] opacity-40 blur-3xl pointer-events-none"
         style={{
-          background: "radial-gradient(circle, hsl(25 95% 53%) 0%, transparent 70%)",
+          background: "radial-gradient(circle, hsl(25 95% 53%) 0%, transparent 60%)",
         }}
       />
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center gap-8 max-w-lg">
-        {/* Speech Bubbles */}
-        <SpeechBubble 
-          messages={welcomeMessages} 
-          delay={1200}
-          onComplete={() => setShowButton(true)}
-        />
+      {/* Main content area - Babai at bottom left, thought cloud above */}
+      <div className="relative z-10 flex flex-col items-start gap-4 mb-8 md:mb-16">
+        {/* Thought Cloud - positioned above Babai */}
+        <div className="ml-4 md:ml-8">
+          <ThoughtCloud 
+            messages={welcomeMessages} 
+            delay={1200}
+            onComplete={() => setShowButton(true)}
+          />
+        </div>
 
-        {/* Babai Character */}
-        <Babai 
-          expression="waving"
-          size="xl"
-          showBubble={false}
-          animate={true}
-        />
-
-        {/* Start Button */}
-        {showButton && (
-          <div className="animate-fade-in mt-6">
-            <GameButton 
-              size="lg" 
-              onClick={handleStart}
-              className="text-xl px-12 py-5"
-            >
-              🚀 Start My Journey
-            </GameButton>
-          </div>
-        )}
+        {/* Babai Character - looking up at thoughts */}
+        <div className="mt-8">
+          <Babai 
+            expression="looking-up"
+            size="xl"
+            showBubble={false}
+            animate={true}
+          />
+        </div>
       </div>
 
-      {/* Bottom gradient */}
+      {/* Start Button - positioned on the right side */}
+      {showButton && (
+        <div className="absolute right-8 md:right-16 bottom-1/3 md:bottom-1/2 animate-fade-in">
+          <GameButton 
+            size="lg" 
+            onClick={handleStart}
+            className="text-lg md:text-xl px-10 md:px-14 py-4 md:py-6 shadow-2xl"
+            style={{
+              boxShadow: "0 0 40px hsl(25 95% 53% / 0.5), 0 0 80px hsl(25 95% 53% / 0.3)",
+            }}
+          >
+            🚀 Start My Journey
+          </GameButton>
+        </div>
+      )}
+
+      {/* Bottom gradient - subtle */}
       <div 
-        className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+        className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
         style={{
-          background: "linear-gradient(to top, hsl(25 95% 53% / 0.1), transparent)",
+          background: "linear-gradient(to top, hsl(25 95% 53% / 0.08), transparent)",
+        }}
+      />
+
+      {/* Top-right decorative glow */}
+      <div 
+        className="absolute top-0 right-0 w-96 h-96 opacity-20 blur-3xl pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, hsl(25 95% 60%) 0%, transparent 70%)",
         }}
       />
     </div>
