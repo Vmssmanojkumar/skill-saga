@@ -48,7 +48,7 @@ const CoursePreviewSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="py-20 px-4 bg-secondary/20">
+    <section className="py-20 px-4 bg-background">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
