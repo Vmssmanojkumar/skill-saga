@@ -1,40 +1,14 @@
-import { useState } from "react";
 import Header from "@/components/Header";
 import Babai from "@/components/Babai";
 import GameButton from "@/components/GameButton";
-import InteractiveDots from "@/components/InteractiveDots";
+import FounderSection from "@/components/FounderSection";
 import { useNavigate } from "react-router-dom";
-
-const founderStory = [
-  {
-    emoji: "💔",
-    title: "The Struggle",
-    text: "I was a student from a small town. Expensive courses were never an option. YouTube videos felt endless. I wanted to learn skills, not watch entertainment.",
-  },
-  {
-    emoji: "💡",
-    title: "The Realization",
-    text: "Real learning doesn't need 10-hour videos. It needs stories, challenges, and a friend who guides you. That's when SkillQuest was born.",
-  },
-  {
-    emoji: "🎯",
-    title: "Our Mission",
-    text: "To make skill learning feel like playing a game. Short lessons. Telugu + English. Affordable. For students who dream big but have limited resources.",
-  },
-];
-
 export function HomePage() {
   const navigate = useNavigate();
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-background relative">
-      {/* Interactive Background */}
-      <InteractiveDots />
-      
-      {/* Content Layer */}
-      <div className="relative z-10">
-        <Header />
+    <div className="min-h-screen bg-background">
+      <Header />
       
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 relative overflow-hidden">
@@ -101,39 +75,8 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Founder Story Section */}
-      <section className="py-20 px-4 bg-secondary/30">
-        <div className="container mx-auto max-w-5xl">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-4">
-            Why We Built This
-          </h2>
-          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-            This isn't just another platform. It's built by students, for students.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {founderStory.map((item, index) => (
-              <div
-                key={index}
-                className="game-card p-6 cursor-pointer"
-                onMouseEnter={() => setHoveredCard(index)}
-                onMouseLeave={() => setHoveredCard(null)}
-              >
-                <div className="text-4xl mb-4">{item.emoji}</div>
-                <h3 className="text-xl font-display font-bold text-foreground mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {item.text}
-                </p>
-                {hoveredCard === index && (
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent rounded-b-2xl" />
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Founder's Journey Section */}
+      <FounderSection />
 
       {/* Babai Quote Section */}
       <section className="py-20 px-4 relative">
@@ -169,7 +112,6 @@ export function HomePage() {
         <p className="mt-2">© 2024 SkillQuest. All rights reserved.</p>
         </div>
       </footer>
-      </div>
     </div>
   );
 }
