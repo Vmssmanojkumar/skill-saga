@@ -2,7 +2,6 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import Babai from "@/components/Babai";
 import GameButton from "@/components/GameButton";
-import InteractiveDots from "@/components/InteractiveDots";
 import { useNavigate } from "react-router-dom";
 
 const founderStory = [
@@ -28,8 +27,7 @@ export function HomePage() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-background relative">
-      <InteractiveDots gridSpacing={35} animationSpeed={0.003} />
+    <div className="min-h-screen bg-background">
       <Header />
       
       {/* Hero Section */}
@@ -131,97 +129,6 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Coach Section */}
-      <section className="py-20 px-4 relative">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex flex-col lg:flex-row items-start gap-12">
-            {/* Left - Content */}
-            <div className="flex-1">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-                <span className="text-primary">Your Guide,</span>{" "}
-                <span className="text-foreground">Not Just A Teacher</span>
-              </h2>
-              
-              <p className="text-muted-foreground italic mb-6 text-lg">
-                Hey, I'm the founder of SkillQuest, formerly known as a confused student.
-              </p>
-              
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                I began my journey struggling with expensive courses, endless YouTube videos, and zero guidance. 
-                I spent years figuring things out the hard way before choosing a different path: building something 
-                that actually helps. Today, I run SkillQuest full-time, a platform born from struggle, persistence, 
-                and the desire to make learning truly accessible.
-              </p>
-              
-              <div className="mb-8">
-                <p className="text-muted-foreground mb-3">Remember:</p>
-                <p className="text-primary font-display text-lg mb-2">
-                  You don't need a perfect background to build a great future.
-                </p>
-                <p className="text-primary font-display text-lg mb-2">
-                  You just need direction, discipline, and the courage to start.
-                </p>
-              </div>
-              
-              <p className="text-muted-foreground italic mb-8">
-                Let's move forward, one step, one skill, one leap at a time.
-              </p>
-              
-              <GameButton 
-                size="lg"
-                onClick={() => navigate("/courses")}
-              >
-                Get Started Now →
-              </GameButton>
-              
-              {/* Social Proof */}
-              <div className="flex flex-col gap-3 mt-8">
-                <div className="flex items-center gap-3 p-3 bg-card/50 rounded-xl border border-border w-fit">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                    <span className="text-primary font-bold">SQ</span>
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <span className="font-semibold text-foreground">@skillquest</span>
-                      <span className="text-destructive text-sm">▶</span>
-                      <span className="text-muted-foreground text-sm">Coming Soon</span>
-                    </div>
-                    <p className="text-xs text-muted-foreground">Story-driven skill courses in Telugu + English</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Right - Babai with badges */}
-            <div className="flex-shrink-0 relative">
-              <Babai expression="proud" size="xl" showBubble={false} />
-              
-              {/* Floating badges */}
-              <div className="absolute -top-4 -right-4 bg-card/90 backdrop-blur-sm border border-border rounded-lg px-3 py-2 shadow-lg">
-                <div className="flex items-center gap-2">
-                  <span className="text-primary">🎯</span>
-                  <span className="text-sm font-medium text-foreground">Built for Students</span>
-                </div>
-              </div>
-              
-              <div className="absolute top-1/2 -right-8 bg-card/90 backdrop-blur-sm border border-border rounded-lg px-3 py-2 shadow-lg">
-                <div className="flex items-center gap-2">
-                  <span className="text-primary">💜</span>
-                  <span className="text-sm font-medium text-foreground">Telugu + English</span>
-                </div>
-              </div>
-              
-              <div className="absolute -bottom-4 -right-4 bg-card/90 backdrop-blur-sm border border-border rounded-lg px-3 py-2 shadow-lg">
-                <div className="flex items-center gap-2">
-                  <span className="text-primary">🚀</span>
-                  <span className="text-sm font-medium text-foreground">Affordable Learning</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
       {/* Babai Quote Section */}
       <section className="py-20 px-4 relative">
         <div 
@@ -232,7 +139,7 @@ export function HomePage() {
           }}
         />
         <div className="container mx-auto max-w-3xl text-center relative z-10">
-          <Babai expression="excited" size="lg" showBubble={false} />
+          <Babai expression="proud" size="lg" showBubble={false} />
           <blockquote className="mt-8 text-2xl md:text-3xl font-display text-foreground italic">
             "Nee journey maname start cheddham ra!"
           </blockquote>
