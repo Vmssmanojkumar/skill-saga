@@ -7,13 +7,6 @@ const CTASection = () => {
 
   return (
     <section className="py-24 px-4 relative overflow-hidden">
-      {/* Background glow */}
-      <div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-20 blur-3xl pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, hsl(25 95% 53%) 0%, transparent 70%)",
-        }}
-      />
 
       <div className="container mx-auto max-w-4xl relative z-10">
         <div className="game-card p-8 md:p-12 text-center">
