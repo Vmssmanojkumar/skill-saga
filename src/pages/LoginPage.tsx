@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate, useSearchParams, Link } from "react-router-dom";
 import Babai from "@/components/Babai";
 import GameButton from "@/components/GameButton";
+import FloatingIcons from "@/components/FloatingIcons";
+import { useTilt3D } from "@/hooks/useTilt3D";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Mail, Lock, Eye, EyeOff } from "lucide-react";
@@ -15,6 +17,8 @@ export function LoginPage() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
+  const tilt = useTilt3D({ maxTilt: 8, scale: 1.01 });
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,14 +35,17 @@ export function LoginPage() {
     <div 
       className="min-h-screen flex items-center justify-center p-6 relative overflow-hidden"
       style={{
-        background: "radial-gradient(ellipse at center, hsl(0 0% 10%) 0%, hsl(0 0% 4%) 70%)",
+        background: "radial-gradient(ellipse at center, hsl(0 0% 8%) 0%, hsl(0 0% 4%) 70%)",
       }}
     >
-      {/* Background glow */}
+      {/* Floating code icons */}
+      <FloatingIcons />
+
+      {/* Magic purple glow */}
       <div 
-        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-20 blur-3xl pointer-events-none"
+        className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full opacity-15 blur-3xl pointer-events-none"
         style={{
-          background: "radial-gradient(circle, hsl(25 95% 53%) 0%, transparent 70%)",
+          background: "radial-gradient(circle, hsl(var(--magic)) 0%, transparent 70%)",
         }}
       />
 
@@ -52,78 +59,94 @@ export function LoginPage() {
           />
         </div>
 
-        {/* Login Card */}
-        <div className="game-card p-8">
-          <h1 className="text-3xl font-display font-bold text-center text-foreground mb-2">
-            Welcome Back!
-          </h1>
-          <p className="text-muted-foreground text-center mb-8">
-            Continue your learning journey
-          </p>
+        {/* 3D Tilt Login Card */}
+        <div
+          ref={tilt.ref}
+          style={tilt.style}
+          {...tilt.handlers}
+          className="game-card p-8 relative"
+        >
+          {/* Card glow border */}
+          <div 
+            className="absolute inset-0 rounded-2xl opacity-20 pointer-events-none"
+            style={{
+              background: "linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--magic)) 50%, hsl(var(--primary)) 100%)",
+              filter: "blur(1px)",
+            }}
+          />
+          
+          <div className="relative z-10">
+            <h1 className="text-3xl font-display font-bold text-center text-foreground mb-2">
+              Welcome Back!
+            </h1>
+            <p className="text-muted-foreground text-center mb-8">
+              Continue your adventure
+            </p>
 
-          <form onSubmit={handleLogin} className="space-y-6">
-            {/* Email */}
-            <div className="space-y-2">
-              <Label htmlFor="email" className="text-foreground">Email</Label>
-              <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="yourname@email.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="pl-10 bg-secondary border-border focus:border-primary h-12"
-                  required
-                />
+            <form onSubmit={handleLogin} className="space-y-6">
+              {/* Email */}
+              <div className="space-y-2">
+                <Label htmlFor="email" className="text-foreground">Email</Label>
+                <div className="relative">
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="yourname@email.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="pl-10 bg-secondary border-border focus:border-primary h-12"
+                    required
+                  />
+                </div>
               </div>
-            </div>
 
-            {/* Password */}
-            <div className="space-y-2">
-              <Label htmlFor="password" className="text-foreground">Password</Label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                <Input
-                  id="password"
-                  type={showPassword ? "text" : "password"}
-                  placeholder="••••••••"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="pl-10 pr-10 bg-secondary border-border focus:border-primary h-12"
-                  required
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
-                >
-                  {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-                </button>
+              {/* Password */}
+              <div className="space-y-2">
+                <Label htmlFor="password" className="text-foreground">Password</Label>
+                <div className="relative">
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                  <Input
+                    id="password"
+                    type={showPassword ? "text" : "password"}
+                    placeholder="••••••••"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="pl-10 pr-10 bg-secondary border-border focus:border-primary h-12"
+                    required
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                  >
+                    {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                  </button>
+                </div>
               </div>
-            </div>
 
-            {/* Submit */}
-            <GameButton 
-              type="submit" 
-              size="lg" 
-              className="w-full"
-              disabled={isLoading}
-            >
-              {isLoading ? "Logging in..." : "🎮 Start Playing"}
-            </GameButton>
-          </form>
+              {/* Submit */}
+              <GameButton 
+                type="submit" 
+                size="lg" 
+                className="w-full"
+                disabled={isLoading}
+              >
+                {isLoading ? "Logging in..." : "⚔️ Continue Quest"}
+              </GameButton>
+            </form>
 
-          {/* Sign up link */}
-          <p className="text-center mt-6 text-muted-foreground">
-            New here?{" "}
-            <Link 
-              to={`/signup${redirectTo !== "/courses" ? `?redirect=${redirectTo}` : ""}`}
-              className="text-primary hover:underline font-semibold"
-            >
-              Create an account
-            </Link>
-          </p>
+            {/* Sign up link */}
+            <p className="text-center mt-6 text-muted-foreground">
+              New adventurer?{" "}
+              <Link 
+                to={`/signup${redirectTo !== "/courses" ? `?redirect=${redirectTo}` : ""}`}
+                className="text-primary hover:underline font-semibold"
+              >
+                Create an account
+              </Link>
+            </p>
+          </div>
         </div>
 
         {/* Back to home */}
