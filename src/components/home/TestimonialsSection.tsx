@@ -1,4 +1,5 @@
 import Babai from "@/components/Babai";
+import StickFigure from "@/components/StickFigure";
 
 const testimonials = [
   {
@@ -85,7 +86,14 @@ const TestimonialsSection = () => {
               className="game-card p-6 hover:scale-[1.02] transition-transform"
             >
               <div className="flex items-start gap-4">
-                <div className="text-4xl">{item.avatar}</div>
+                <div className="flex-shrink-0">
+                  <StickFigure 
+                    expression={index % 2 === 0 ? "happy" : "excited"} 
+                    size="sm" 
+                    showBubble={false}
+                    animate={false}
+                  />
+                </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
                     <h4 className="font-display font-bold text-foreground">{item.name}</h4>

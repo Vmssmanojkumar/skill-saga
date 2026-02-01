@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Babai from "./Babai";
+import StickFigure from "./StickFigure";
 import GameButton from "./GameButton";
 import ElectricBorder from "./ElectricBorder";
 
@@ -79,7 +80,7 @@ const FounderSection = () => {
             </GameButton>
           </div>
 
-          {/* Right Side - Founder Visual */}
+          {/* Right Side - Founder Visual with Stick Figure teaching students */}
           <div className="relative flex justify-center lg:justify-end">
             <ElectricBorder 
               color="#f97316" 
@@ -87,21 +88,25 @@ const FounderSection = () => {
               chaos={0.08} 
               borderRadius={24}
             >
-              {/* Founder illustration placeholder */}
+              {/* Founder illustration with stick figures */}
               <div className="relative p-8">
-                {/* Founder silhouette/avatar area */}
-                <div className="w-64 h-80 md:w-72 md:h-96 rounded-3xl bg-gradient-to-b from-card to-background flex items-center justify-center overflow-hidden">
-                  {/* Stylized founder silhouette */}
-                  <div className="relative w-full h-full flex items-end justify-center">
-                    {/* Body silhouette */}
-                    <div className="absolute bottom-0 w-40 h-60 bg-gradient-to-t from-primary/20 to-transparent rounded-t-full" />
-                    {/* Head */}
-                    <div className="absolute bottom-48 w-20 h-20 bg-primary/30 rounded-full" />
-                    {/* Decorative elements */}
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-center">
-                      <span className="text-4xl">👨‍💻</span>
-                      <p className="text-xs text-muted-foreground mt-2">Your Mentor</p>
+                {/* Main visual area */}
+                <div className="w-64 h-80 md:w-72 md:h-96 rounded-3xl bg-gradient-to-b from-card to-background flex items-center justify-center overflow-hidden relative">
+                  
+                  {/* Teaching scene - Babai on platform teaching students */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-end pb-8">
+                    {/* Mentor Babai at top, teaching */}
+                    <div className="absolute top-8 left-1/2 -translate-x-1/2">
+                      <Babai expression="teaching" size="md" showBubble={false} />
                     </div>
+                    
+                    {/* Students watching (group of stick figures) */}
+                    <div className="mt-auto">
+                      <StickFigure role="group" size="sm" expression="looking-up" showBubble={false} animate={false} />
+                    </div>
+                    
+                    {/* Label */}
+                    <p className="text-xs text-muted-foreground mt-4 text-center">Your Mentor & Students</p>
                   </div>
                 </div>
 

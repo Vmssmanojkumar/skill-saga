@@ -87,7 +87,7 @@ const FAQSection = () => {
 
         {/* Babai Help */}
         <div className="flex items-center justify-center gap-4 mt-12 p-6 bg-card/50 rounded-2xl border border-border/50">
-          <Babai expression="happy" size="sm" showBubble={false} />
+          <Babai expression="thinking" size="sm" showBubble={false} />
           <div>
             <p className="text-foreground font-medium">Still have questions?</p>
             <p className="text-sm text-muted-foreground">
