@@ -77,7 +77,7 @@ const HowItWorksSection = () => {
           <div className="text-center mb-8">
             <h3 className="text-2xl md:text-3xl font-display font-bold mb-2">
               <span className="text-foreground">Why Choose </span>
-              <span className="text-gradient">SkillQuest?</span>
+              <span className="text-gradient">Skill Saga?</span>
             </h3>
             <p className="text-muted-foreground">See how we compare to expensive courses</p>
           </div>
@@ -85,7 +85,7 @@ const HowItWorksSection = () => {
           <div className="game-card overflow-hidden">
             <div className="grid grid-cols-3 bg-primary/10 p-4 font-display font-bold text-sm">
               <div className="text-muted-foreground">Feature</div>
-              <div className="text-primary text-center">SkillQuest</div>
+              <div className="text-primary text-center">Skill Saga</div>
               <div className="text-muted-foreground text-center">Others</div>
             </div>
             {comparisons.map((row, index) => (

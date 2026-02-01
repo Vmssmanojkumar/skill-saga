@@ -22,9 +22,9 @@ export function Header() {
           className="flex items-center gap-2 group"
         >
           <span className="text-2xl font-display font-bold text-gradient">
-            SkillQuest
+            Skill Saga
           </span>
-          <span className="text-primary text-xl">🎮</span>
+          <span className="text-primary text-xl">⚔️</span>
         </Link>
 
         {/* Navigation */}

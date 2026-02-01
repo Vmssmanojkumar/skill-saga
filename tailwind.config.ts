@@ -67,6 +67,10 @@ export default {
           DEFAULT: "hsl(var(--warning))",
           foreground: "hsl(var(--warning-foreground))",
         },
+        magic: {
+          DEFAULT: "hsl(var(--magic))",
+          foreground: "hsl(var(--magic-foreground))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

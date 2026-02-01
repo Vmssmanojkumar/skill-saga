@@ -101,9 +101,9 @@ export function HomePage() {
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <h4 className="font-display font-bold text-foreground mb-4">SkillQuest</h4>
+              <h4 className="font-display font-bold text-foreground mb-4">Skill Saga</h4>
               <p className="text-sm text-muted-foreground">
-                Learn skills like playing a game. Built for Indian students who dream big.
+                Learn skills like an RPG adventure. Built for Telugu and English learners who dream big.
               </p>
             </div>
             <div>
@@ -136,7 +136,7 @@ export function HomePage() {
           </div>
           <div className="pt-8 border-t border-border text-center text-muted-foreground text-sm">
             <p>Built with ❤️ for Indian students who dream big</p>
-            <p className="mt-2">© 2024 SkillQuest. All rights reserved.</p>
+            <p className="mt-2">© 2024 Skill Saga. All rights reserved.</p>
           </div>
         </div>
       </footer>
