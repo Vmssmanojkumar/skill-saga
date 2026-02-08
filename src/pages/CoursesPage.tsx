@@ -69,8 +69,8 @@ export function CoursesPage() {
   const navigate = useNavigate();
 
   const handleCourseClick = (courseId: string) => {
-    // In real app, check if logged in. For now, go to login with redirect
-    navigate(`/login?redirect=/skill/${courseId}`);
+    // Navigate to course landing page
+    navigate(`/course/${courseId}`);
   };
 
   return (

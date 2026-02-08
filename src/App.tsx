@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import WelcomeScene from "./pages/WelcomeScene";
 import HomePage from "./pages/HomePage";
 import CoursesPage from "./pages/CoursesPage";
+import CourseLandingPage from "./pages/CourseLandingPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import SkillJourneyPage from "./pages/SkillJourneyPage";
@@ -27,6 +28,7 @@ const App = () => (
           {/* Main Pages */}
           <Route path="/home" element={<HomePage />} />
           <Route path="/courses" element={<CoursesPage />} />
+          <Route path="/course/:courseId" element={<CourseLandingPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           
