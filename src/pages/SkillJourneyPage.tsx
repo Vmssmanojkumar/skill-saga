@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "@/components/Header";
-import Babai from "@/components/Babai";
+import Sensei from "@/components/Sensei";
 import GameButton from "@/components/GameButton";
 import StarBackground from "@/components/journey/StarBackground";
 import ModuleCard, { Module } from "@/components/journey/ModuleCard";
@@ -191,7 +191,7 @@ export function SkillJourneyPage() {
           animate={{ y: [0, -6, 0] }}
           transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
         >
-          <Babai
+          <Sensei
             expression="teaching"
             message="Baagundhi ra! Munde module yedhi? 💪"
             size="md"
@@ -239,7 +239,7 @@ export function SkillJourneyPage() {
                 <X className="w-4 h-4" />
               </button>
 
-              <Babai
+              <Sensei
                 expression="thinking"
                 message="Nee journey baagundhi ra… Ee door open cheyyali ante chinna support kavali."
                 size="md"

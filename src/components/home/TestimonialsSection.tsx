@@ -1,5 +1,4 @@
-import Babai from "@/components/Babai";
-import StickFigure from "@/components/StickFigure";
+import Sensei from "@/components/Sensei";
 
 const testimonials = [
   {
@@ -15,7 +14,7 @@ const testimonials = [
     location: "Vijayawada",
     course: "Web Design",
     avatar: "👩‍💻",
-    text: "₹99 lo antha value? Unbelievable! I built my first website and got an internship. Babai's motivation kept me going.",
+    text: "₹99 lo antha value? Unbelievable! I built my first website and got an internship. Sensei's motivation kept me going.",
     rating: 5,
   },
   {
@@ -87,7 +86,7 @@ const TestimonialsSection = () => {
             >
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0">
-                  <StickFigure 
+                  <Sensei 
                     expression={index % 2 === 0 ? "happy" : "excited"} 
                     size="sm" 
                     showBubble={false}
@@ -116,13 +115,13 @@ const TestimonialsSection = () => {
           ))}
         </div>
 
-        {/* Babai Encouragement */}
+        {/* Sensei Encouragement */}
         <div className="flex flex-col items-center text-center">
-          <Babai expression="proud" size="md" showBubble={false} />
+          <Sensei expression="proud" size="md" showBubble={false} />
           <p className="mt-4 text-lg text-foreground font-medium italic">
             "Next success story neevu kaavali ra! 🌟"
           </p>
-          <p className="text-sm text-muted-foreground">— Babai believes in you</p>
+          <p className="text-sm text-muted-foreground">— Sensei believes in you</p>
         </div>
       </div>
     </section>

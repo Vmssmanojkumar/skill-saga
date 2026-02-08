@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
-import Babai from "@/components/Babai";
-import StickFigure from "@/components/StickFigure";
+import Sensei from "@/components/Sensei";
 import GameButton from "@/components/GameButton";
 import FounderSection from "@/components/FounderSection";
 import CoursePreviewSection from "@/components/home/CoursePreviewSection";
@@ -20,12 +19,9 @@ export function HomePage() {
       
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 relative overflow-hidden">
-        {/* Background decorative stick figures */}
-        <div className="absolute top-32 right-10 opacity-10 hidden lg:block">
-          <StickFigure expression="excited" size="lg" showBubble={false} animate={false} />
-        </div>
-        <div className="absolute bottom-10 left-10 opacity-10 hidden lg:block">
-          <StickFigure role="group" size="sm" showBubble={false} animate={false} />
+        {/* Background decorative elements */}
+        <div className="absolute top-32 right-10 opacity-20 hidden lg:block">
+          <Sensei expression="excited" size="md" showBubble={false} animate={false} />
         </div>
 
         <div className="container mx-auto max-w-6xl">
@@ -71,9 +67,9 @@ export function HomePage() {
               </div>
             </div>
 
-            {/* Right - Babai (stick figure mentor) */}
+            {/* Right - Sensei (mentor character) */}
             <div className="flex-shrink-0">
-              <Babai 
+              <Sensei 
                 expression="waving"
                 message="Ready to level up your skills? Let's go! 🚀"
                 size="xl"
