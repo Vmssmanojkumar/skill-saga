@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Babai from "./Babai";
-import StickFigure from "./StickFigure";
+import Sensei from "./Sensei";
 import GameButton from "./GameButton";
 import ElectricBorder from "./ElectricBorder";
 
@@ -59,7 +58,7 @@ const FounderSection = () => {
 
             {/* Babai Quote */}
             <div className="flex items-start gap-4 bg-card/50 p-4 rounded-2xl border border-border/50">
-              <Babai expression="proud" size="sm" showBubble={false} />
+              <Sensei expression="proud" size="sm" showBubble={false} />
               <div className="pt-2">
                 <p className="text-foreground italic font-medium">
                   "Ee story nee kosame ra…
@@ -93,20 +92,10 @@ const FounderSection = () => {
                 {/* Main visual area */}
                 <div className="w-64 h-80 md:w-72 md:h-96 rounded-3xl bg-gradient-to-b from-card to-background flex items-center justify-center overflow-hidden relative">
                   
-                  {/* Teaching scene - Babai on platform teaching students */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-end pb-8">
-                    {/* Mentor Babai at top, teaching */}
-                    <div className="absolute top-8 left-1/2 -translate-x-1/2">
-                      <Babai expression="teaching" size="md" showBubble={false} />
-                    </div>
-                    
-                    {/* Students watching (group of stick figures) */}
-                    <div className="mt-auto">
-                      <StickFigure role="group" size="sm" expression="looking-up" showBubble={false} animate={false} />
-                    </div>
-                    
-                    {/* Label */}
-                    <p className="text-xs text-muted-foreground mt-4 text-center">Your Mentor & Students</p>
+                  {/* Teaching scene */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <Sensei expression="teaching" size="lg" showBubble={false} />
+                    <p className="text-xs text-muted-foreground mt-4 text-center">Your Mentor</p>
                   </div>
                 </div>
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useSearchParams, Link } from "react-router-dom";
-import Babai from "@/components/Babai";
+import Sensei from "@/components/Sensei";
 import GameButton from "@/components/GameButton";
 import FloatingIcons from "@/components/FloatingIcons";
 import { useTilt3D } from "@/hooks/useTilt3D";
@@ -51,9 +51,9 @@ export function SignupPage() {
       />
 
       <div className="w-full max-w-md relative z-10">
-        {/* Babai */}
+        {/* Sensei */}
         <div className="flex justify-center mb-6">
-          <Babai 
+          <Sensei 
             expression="excited"
             message="Super ra! Nee saga ikkada start avthundi! 🚀"
             size="md"

@@ -1,4 +1,4 @@
-import Babai from "@/components/Babai";
+import Sensei from "@/components/Sensei";
 
 const steps = [
   {
@@ -32,7 +32,7 @@ const comparisons = [
   { feature: "Language", us: "Telugu + English", others: "English Only" },
   { feature: "Format", us: "Story-driven, Gamified", others: "Long Video Lectures" },
   { feature: "Duration", us: "15-30 min/day", others: "2-4 hours/day" },
-  { feature: "Support", us: "Babai + Community", others: "Limited/None" },
+  { feature: "Support", us: "Sensei + Community", others: "Limited/None" },
 ];
 
 const HowItWorksSection = () => {
@@ -100,9 +100,9 @@ const HowItWorksSection = () => {
             ))}
           </div>
 
-          {/* Babai Comment */}
+          {/* Sensei Comment */}
           <div className="flex items-center justify-center gap-4 mt-8">
-            <Babai expression="thinking" size="sm" showBubble={false} />
+            <Sensei expression="thinking" size="sm" showBubble={false} />
             <p className="text-muted-foreground italic text-sm">
               "Quality learning shouldn't cost a fortune ra..."
             </p>

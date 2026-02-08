@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
-import Babai from "@/components/Babai";
+import Sensei from "@/components/Sensei";
 import GameButton from "@/components/GameButton";
 import { cn } from "@/lib/utils";
 import { ChevronRight, ChevronLeft, CheckCircle } from "lucide-react";
@@ -161,7 +161,7 @@ export function LessonPage() {
 
             {section.type === "babai" && (
               <div className="flex flex-col items-center py-8">
-                <Babai 
+                <Sensei 
                   expression="excited"
                   message={section.content}
                   size="lg"
@@ -256,7 +256,7 @@ export function LessonPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/90 backdrop-blur-sm">
           <div className="text-center animate-scale-in">
             <div className="text-6xl mb-4">🎉</div>
-            <Babai 
+            <Sensei 
               expression="proud"
               message="Super ra! Level complete chesav! Next level unlock ayindi!"
               size="lg"

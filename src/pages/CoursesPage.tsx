@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
-import Babai from "@/components/Babai";
+import Sensei from "@/components/Sensei";
 import GameButton from "@/components/GameButton";
 import { cn } from "@/lib/utils";
 import { Lock, Star, Zap, Code, Database, Globe, Server } from "lucide-react";
@@ -90,9 +90,9 @@ export function CoursesPage() {
             </p>
           </div>
 
-          {/* Babai Guide */}
+          {/* Sensei Guide */}
           <div className="flex justify-center mb-12">
-            <Babai 
+            <Sensei 
               expression="happy"
               message="Ee skills nerchukunte job guarantee ra! 💪"
               size="md"

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Babai from "@/components/Babai";
+import Sensei from "@/components/Sensei";
 import ThoughtCloud from "@/components/ThoughtCloud";
 import GameButton from "@/components/GameButton";
 
@@ -64,10 +64,10 @@ export function WelcomeScene() {
           />
         </div>
 
-        {/* Babai Character - looking up at thoughts */}
+        {/* Sensei Character - looking up at thoughts */}
         <div className="mt-8">
-          <Babai 
-            expression="looking-up"
+          <Sensei 
+            expression="excited"
             size="xl"
             showBubble={false}
             animate={true}

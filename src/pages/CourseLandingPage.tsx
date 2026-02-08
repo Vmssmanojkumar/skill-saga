@@ -1,8 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
-import Babai from "@/components/Babai";
-import StickFigure from "@/components/StickFigure";
+import Sensei from "@/components/Sensei";
 import GameButton from "@/components/GameButton";
 import { cn } from "@/lib/utils";
 import { 
@@ -314,9 +313,9 @@ export function CourseLandingPage() {
                       <Play className="w-8 h-8 text-primary-foreground ml-1" />
                     </motion.div>
                     
-                    {/* Babai */}
+                    {/* Sensei */}
                     <div className="absolute bottom-4 left-4">
-                      <Babai expression="teaching" size="sm" showBubble={false} />
+                      <Sensei expression="teaching" size="sm" showBubble={false} />
                     </div>
                   </div>
                 </div>
@@ -421,10 +420,10 @@ export function CourseLandingPage() {
 
             <div className="game-card p-8 flex flex-col md:flex-row items-center gap-8">
               <div className="flex-shrink-0">
-                <Babai expression="teaching" size="lg" showBubble={false} />
+                <Sensei expression="teaching" size="lg" showBubble={false} />
               </div>
               <div className="text-center md:text-left">
-                <h3 className="text-2xl font-display font-bold text-foreground mb-2">Babai</h3>
+                <h3 className="text-2xl font-display font-bold text-foreground mb-2">Sensei</h3>
                 <p className="text-primary font-semibold mb-4">Your Telugu Tech Mentor</p>
                 <p className="text-muted-foreground leading-relaxed">
                   "Nenu coding nerchukunna journey lo struggle chala chesanu ra. Anduke mee journey easy cheyyataniki 
@@ -475,7 +474,7 @@ export function CourseLandingPage() {
                   className="game-card p-6"
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <StickFigure 
+                    <Sensei 
                       expression={index % 2 === 0 ? "happy" : "excited"} 
                       size="sm" 
                       showBubble={false}
@@ -500,7 +499,7 @@ export function CourseLandingPage() {
         {/* Bottom CTA */}
         <section className="py-16 px-4 bg-gradient-to-b from-transparent to-primary/10">
           <div className="container mx-auto max-w-2xl text-center">
-            <Babai expression="excited" message="Inka wait enduku ra? Let's start! 🚀" size="md" />
+            <Sensei expression="excited" message="Inka wait enduku ra? Let's start! 🚀" size="md" />
             
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <div className="flex items-baseline gap-2">
